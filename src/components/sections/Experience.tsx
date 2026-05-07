@@ -8,7 +8,7 @@ import { SiFigma } from "react-icons/si";
 const experiences = [
   {
     id: "ultrack",
-    role: "Front-End Engineering Intern",
+    role: "Front-End Developer Intern",
     company: "Ultrack Technology Sdn. Bhd.",
     location: "Cyberjaya",
     period: "Jan 2024 - May 2024",
