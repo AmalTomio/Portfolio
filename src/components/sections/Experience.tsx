@@ -25,7 +25,7 @@ const experiences = [
   },
   {
     id: "mydin",
-    role: "Staff Associate (SOFT SKILLS / SALES ACUMEN)",
+    role: "Staff Associate",
     company: "Mydin Taman Batik",
     location: "Kedah",
     period: "Mar 2021 - Jun 2021",
