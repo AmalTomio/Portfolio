@@ -27,7 +27,7 @@ const experiences = [
     id: "mydin",
     role: "Staff Associate",
     company: "Mydin Taman Batik",
-    location: "Kedah",
+    location: "Sungai Petani",
     period: "Mar 2021 - Jun 2021",
     softSkillsFocus: true,
     highlights: [
