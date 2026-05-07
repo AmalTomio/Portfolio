@@ -1,26 +1,66 @@
 @import "tailwindcss";
+@plugin "tailwindcss-animate";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-heading: var(--font-geist);
+  --font-body: var(--font-inter);
+
+  --color-background: var(--theme-bg);
+  --color-foreground: var(--theme-fg);
+  --color-surface: var(--theme-surface);
+  --color-muted: var(--theme-muted);
+  --color-accent: var(--theme-accent);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --theme-bg: #ffffff;
+    --theme-fg: #050505;
+    --theme-surface: rgba(0, 0, 0, 0.03); 
+    --theme-muted: #666666;
+    --theme-accent: #9333ea;
+  }
+
+  .dark {
+    --theme-bg: #050505;
+    --theme-fg: #ffffff;
+    --theme-surface: rgba(255, 255, 255, 0.04);
+    --theme-muted: #888888;
+    --theme-accent: #a855f7;
+  }
+
+  html.lenis { height: auto; }
+  .lenis.lenis-smooth { scroll-behavior: auto; }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased transition-colors duration-500;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .glass-card {
+    @apply bg-surface backdrop-blur-2xl border border-muted/10;
+    box-shadow: 
+      0 2px 8px -2px rgba(0, 0, 0, 0.05), 
+      0 8px 24px -4px rgba(0, 0, 0, 0.03), 
+      0 16px 32px -8px rgba(0, 0, 0, 0.02);
+  }
+  
+  .dark .glass-card {
+    box-shadow: 
+      0 12px 32px rgba(0, 0, 0, 0.5),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+}
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
 }
