@@ -70,6 +70,7 @@ export default function Hero() {
                 alt="Che Amal Nur Ilham"
                 fill 
                 priority
+                quality={100}
                 sizes="(max-width: 768px) 280px, (max-width: 1200px) 400px, 480px" 
                 className="object-cover object-center"
               />
